@@ -54,12 +54,12 @@ class winningnumbers
                 new playernumbers() { playernumber = number6},  
             };
 
-            if (checknumbers() == true)
+            if (this.checknumbers() == true)
             {   
                 return(lottomsgs.lottoErrors(1));
             }
             else
-            if (duplicatecheck().Count > 0)
+            if (this.duplicatecheck().Count > 0)
             {
                 return(lottomsgs.lottoErrors(2));
             }
@@ -69,7 +69,7 @@ class winningnumbers
                 return(lottomsgs.lottoErrors(3));
             }
             
-            foreach (var item in getmatchingnumbers())
+            foreach (var item in this.getmatchingnumbers())
             {
                 if(item.playernumber != this.listOfwinningnumbers.LastOrDefault().WinningNumber)
                     this.matchednumbersbonus++;   
